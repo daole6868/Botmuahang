@@ -1,0 +1,218 @@
+{
+    "map01": {
+        "name": "Mondstadt",
+        "content": "Full 100% Map\nFull Thần Đồng\nKhông Quest",
+        "price": 200000,
+        "note": "Trống"
+    },
+    "map02": {
+        "name": "Long Tích Tuyết Sơn",
+        "content": "Full 100% Map\nFull Thần Đồng\nKhông Quest",
+        "price": 120000,
+        "note": "Trống"
+    },
+    "map03": {
+        "name": "Liyue",
+        "content": "Full 100% Map\nFull Thần Đồng\nKhông Quest",
+        "price": 300000,
+        "note": "Trống"
+    },
+    "map04": {
+        "name": "Vực Đá Sâu",
+        "content": "Full 100% Map\nFull Thần Đồng\nKhông Quest",
+        "price": 100000,
+        "note": "Trống"
+    },
+    "map05": {
+        "name": "Khu Mỏ Ngầm",
+        "content": "Full 100% Map\nFull Thần Đồng\nKhông Quest",
+        "price": 100000,
+        "note": "Trống"
+    },
+    "map06": {
+        "name": "Inazuma",
+        "content": "Full 100% Map\nFull Thần Đồng\nKhông Quest",
+        "price": 300000,
+        "note": "Trống"
+    },
+    "map07": {
+        "name": "Enkanomiya",
+        "content": "Full 100% Map\nFull Thần Đồng\nKhông Quest",
+        "price": 100000,
+        "note": "Trống"
+    },
+    "map08": {
+        "name": "Sumeru Rừng Mưa",
+        "content": "Full 100% Map\nFull Thần Đồng\nKhông Quest",
+        "price": 350000,
+        "note": "Trống"
+    },
+    "map09": {
+        "name": "Sumeru Xa Mạc",
+        "content": "Full 100% Map\nFull Thần Đồng\nKhông Quest",
+        "price": 400000,
+        "note": "Trống"
+    },
+    "map10": {
+        "name": "Sumeru Hai Đảo",
+        "content": "Full 100% Map\nFull Thần Đồng\nKhông Quest",
+        "price": 180000,
+        "note": "Trống"
+    },
+    "map11": {
+        "name": "Fontaine",
+        "content": "Full 100% Map\nFull Thần Đồng\nKhông Quest",
+        "price": 650000,
+        "note": "Trống"
+    },
+    "map12": {
+        "name": "Trầm Ngọc Cốc",
+        "content": "Full 100% Map\nFull Thần Đồng\nKhông Quest",
+        "price": 200000,
+        "note": "Trống"
+    },
+    "map13": {
+        "name": "Biển Kỉ Nguyên Cũ",
+        "content": "Full 100% Map\nFull Thần Đồng\nKhông Quest",
+        "price": 120000,
+        "note": "Trống"
+    },
+    "map14": {
+        "name": "Natlan 5.0",
+        "content": "Full 100% Map\nFull Thần Đồng\nKhông Quest",
+        "price": 200000,
+        "note": "Trống"
+    },
+    "map15": {
+        "name": "Natlan 5.2",
+        "content": "Full 100% Map\nFull Thần Đồng\nKhông Quest",
+        "price": 180000,
+        "note": "Trống"
+    },
+    "map16": {
+        "name": "Natlan 5.5",
+        "content": "Full 100% Map\nFull Thần Đồng\nKhông Quest",
+        "price": 170000,
+        "note": "Trống"
+    },
+    "map17": {
+        "name": "Núi Thánh Viễn Cổ",
+        "content": "Full 100% Map\nFull Thần Đồng\nKhông Quest",
+        "price": 100000,
+        "note": "Trống"
+    },
+    "map18": {
+        "name": "Natlan 5.8 Khu Nghỉ Dưỡng Nhàn Nhã",
+        "content": "Full 100% Map\nFull Thần Đồng\nKhông Quest",
+        "price": 120000,
+        "note": "Trống"
+    },
+    "map19": {
+        "name": "Nod-Krai",
+        "content": "Full 100% Map\nFull Thần Đồng\nKhông Quest",
+        "price": 200000,
+        "note": "Trống"
+    },
+    "map20": {
+        "name": "Phong Thần Đồng",
+        "content": "Full Vật Phẩm Hiếm",
+        "price": 50000,
+        "note": "Trống"
+    },
+    "map21": {
+        "name": "Nham Thần Đồng",
+        "content": "Full Vật Phẩm Hiếm",
+        "price": 80000,
+        "note": "Trống"
+    },
+    "map22": {
+        "name": "Lôi Thần Đồng",
+        "content": "Full Vật Phẩm Hiếm",
+        "price": 100000,
+        "note": "Trống"
+    },
+    "map23": {
+        "name": "Thảo Thần Đồng",
+        "content": "Full Vật Phẩm Hiếm",
+        "price": 190000,
+        "note": "Trống"
+    },
+    "map24": {
+        "name": "Thủy Thần Đồng",
+        "content": "Full Vật Phẩm Hiếm",
+        "price": 190000,
+        "note": "Trống"
+    },
+    "map25": {
+        "name": "Hỏa Thần Đồng",
+        "content": "Full Vật Phẩm Hiếm",
+        "price": 170000,
+        "note": "Trống"
+    },
+    "map26": {
+        "name": "Mã Não",
+        "content": "Full Vật Phẩm Hiếm",
+        "price": 80000,
+        "note": "Trống"
+    },
+    "map27": {
+        "name": "Lưu Minh Thạch",
+        "content": "Full Vật Phẩm Hiếm",
+        "price": 80000,
+        "note": "Trống"
+    },
+    "map28": {
+        "name": "Cá Chép Thương Linh",
+        "content": "Full Vật Phẩm Hiếm",
+        "price": 50000,
+        "note": "Trống"
+    },
+    "map29": {
+        "name": "Tịnh Quang Vũ",
+        "content": "Full Vật Phẩm Hiếm",
+        "price": 40000,
+        "note": "Trống"
+    },
+    "map30": {
+        "name": "Nguyệt Thần Đồng",
+        "content": "Full Vật Phẩm Hiếm",
+        "price": 40000,
+        "note": "Trống"
+    },
+    "map31": {
+        "name": "Tinh Diệp",
+        "content": "120 Tinh Điệp",
+        "price": 20000,
+        "note": "Trống"
+    },
+    "map32": {
+        "name": "Đặc Sản Vùng",
+        "content": "170 Đặc Sản",
+        "price": 20000,
+        "note": "Trống"
+    },
+    "map33": {
+        "name": "Khoáng Sản",
+        "content": "150 Khoáng Sản",
+        "price": 20000,
+        "note": "Trống"
+    },
+    "map34": {
+        "name": "Boss Tuần",
+        "content": "Một Lần Đánh Boss Tuần",
+        "price": 2000,
+        "note": "Trống"
+    },
+    "map35": {
+        "name": "Xả Nhựa",
+        "content": "Một Lần Đi Bí Cảnh Xả Nhựa",
+        "price": 2000,
+        "note": "Trống"
+    },
+    "map36": {
+        "name": "Nguyên Liệu Quái Cấp 1",
+        "content": "100 Nguyên Liệu Quái Cấp 1",
+        "price": 17000,
+        "note": "Trống"
+    }
+}
