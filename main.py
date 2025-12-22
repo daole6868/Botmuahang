@@ -1,22 +1,26 @@
-import os
-from dotenv import load_dotenv
+import discord
+from discord.ext import commands  # Đảm bảo CÓ dòng này
+from discord.ui import Button, View, Modal, TextInput
+import json
+import os # Cần thiết để đọc biến môi trường từ Render
+from dotenv import load_dotenv # Cần thiết để đọc .env (nếu có)
+import asyncio
+from flask import Flask
+from threading import Thread
 
-# load_dotenv sẽ không gây lỗi nếu không tìm thấy file .env
+# --- TẢI BIẾN MÔI TRƯỜNG ---
 load_dotenv() 
 
-# os.getenv sẽ ưu tiên lấy từ cấu hình Render nếu file .env không tồn tại
+# Lấy các biến từ Render Environment Variables
 TOKEN = os.getenv("TOKEN")
 BANK_ID = os.getenv("BANK_ID")
 ACCOUNT_NO = os.getenv("ACCOUNT_NO")
 
-# Ép kiểu số cho ID (trên Render mọi giá trị nhập vào đều là chuỗi văn bản)
-try:
-    CHANNEL_ID_SHOP = int(os.getenv("CHANNEL_ID_SHOP"))
-    CHANNEL_ID_ADMIN = int(os.getenv("CHANNEL_ID_ADMIN"))
-    # Các biến khác...
-except (TypeError, ValueError):
-    print("⚠️ Lỗi: Chưa cấu hình ID kênh trong Environment Variables của Render!")
-    
+# Ép kiểu cho ID (Rất quan trọng trên Render)
+CHANNEL_ID_SHOP = int(os.getenv("CHANNEL_ID_SHOP"))
+CHANNEL_ID_ADMIN = int(os.getenv("CHANNEL_ID_ADMIN"))
+# CATEGORY_ID_TICKET = int(os.getenv("CATEGORY_ID_TICKET")) # Nếu bạn có dùng
+
 # --- DỮ LIỆU ---
 user_carts = {}    
 active_tickets = {} 
