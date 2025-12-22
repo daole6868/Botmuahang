@@ -1,22 +1,22 @@
-import discord
-from discord.ext import commands
 import os
-from dotenv import load_dotenv  # Thêm dòng này
+from dotenv import load_dotenv
 
-# --- TẢI BIẾN TỪ FILE .ENV ---
-load_dotenv()
+# load_dotenv sẽ không gây lỗi nếu không tìm thấy file .env
+load_dotenv() 
 
-# Lấy dữ liệu và gán vào biến
+# os.getenv sẽ ưu tiên lấy từ cấu hình Render nếu file .env không tồn tại
 TOKEN = os.getenv("TOKEN")
 BANK_ID = os.getenv("BANK_ID")
 ACCOUNT_NO = os.getenv("ACCOUNT_NO")
 
-# Lưu ý quan trọng: os.getenv luôn trả về kiểu Chuỗi (String)
-# Các ID của Discord cần kiểu Số nguyên (Integer) nên phải ép kiểu int()
-CHANNEL_ID_SHOP = int(os.getenv("CHANNEL_ID_SHOP"))
-CATEGORY_ID_TICKET = int(os.getenv("CATEGORY_ID_TICKET"))
-CHANNEL_ID_ADMIN = int(os.getenv("CHANNEL_ID_ADMIN"))
-
+# Ép kiểu số cho ID (trên Render mọi giá trị nhập vào đều là chuỗi văn bản)
+try:
+    CHANNEL_ID_SHOP = int(os.getenv("CHANNEL_ID_SHOP"))
+    CHANNEL_ID_ADMIN = int(os.getenv("CHANNEL_ID_ADMIN"))
+    # Các biến khác...
+except (TypeError, ValueError):
+    print("⚠️ Lỗi: Chưa cấu hình ID kênh trong Environment Variables của Render!")
+    
 # --- DỮ LIỆU ---
 user_carts = {}    
 active_tickets = {} 
