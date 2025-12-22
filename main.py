@@ -1,15 +1,14 @@
 import discord
-from discord.ext import commands  # Đảm bảo CÓ dòng này
+from discord.ext import commands
 from discord.ui import Button, View, Modal, TextInput
 import json
-import os # Cần thiết để đọc biến môi trường từ Render
-from dotenv import load_dotenv # Cần thiết để đọc .env (nếu có)
+import os
 import asyncio
-from flask import Flask
+from flask import Flask        # Render đang lỗi ở dòng này vì thiếu thư viện
 from threading import Thread
+from dotenv import load_dotenv
 
-# --- TẢI BIẾN MÔI TRƯỜNG ---
-load_dotenv() 
+load_dotenv()
 
 # Lấy các biến từ Render Environment Variables
 TOKEN = os.getenv("TOKEN")
