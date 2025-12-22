@@ -1,9 +1,21 @@
 import discord
 from discord.ext import commands
-from discord.ui import Button, View, Modal, TextInput
-import json
-import urllib.parse
-import asyncio
+import os
+from dotenv import load_dotenv  # Thêm dòng này
+
+# --- TẢI BIẾN TỪ FILE .ENV ---
+load_dotenv()
+
+# Lấy dữ liệu và gán vào biến
+TOKEN = os.getenv("TOKEN")
+BANK_ID = os.getenv("BANK_ID")
+ACCOUNT_NO = os.getenv("ACCOUNT_NO")
+
+# Lưu ý quan trọng: os.getenv luôn trả về kiểu Chuỗi (String)
+# Các ID của Discord cần kiểu Số nguyên (Integer) nên phải ép kiểu int()
+CHANNEL_ID_SHOP = int(os.getenv("CHANNEL_ID_SHOP"))
+CATEGORY_ID_TICKET = int(os.getenv("CATEGORY_ID_TICKET"))
+CHANNEL_ID_ADMIN = int(os.getenv("CHANNEL_ID_ADMIN"))
 
 # --- DỮ LIỆU ---
 user_carts = {}    
