@@ -3,216 +3,1127 @@
         "name": "Mondstadt",
         "content": "Full 100% Map\nFull Thần Đồng\nKhông Quest",
         "price": 200000,
-        "note": "Trống"
+        "note": "Trống",
+        "game": "Genshin Impact"
     },
     "map02": {
         "name": "Long Tích Tuyết Sơn",
         "content": "Full 100% Map\nFull Thần Đồng\nKhông Quest",
         "price": 120000,
-        "note": "Trống"
+        "note": "Trống",
+        "game": "Genshin Impact"
     },
     "map03": {
         "name": "Liyue",
         "content": "Full 100% Map\nFull Thần Đồng\nKhông Quest",
         "price": 300000,
-        "note": "Trống"
+        "note": "Trống",
+        "game": "Genshin Impact"
     },
     "map04": {
         "name": "Vực Đá Sâu",
         "content": "Full 100% Map\nFull Thần Đồng\nKhông Quest",
         "price": 100000,
-        "note": "Trống"
+        "note": "Trống",
+        "game": "Genshin Impact"
     },
     "map05": {
         "name": "Khu Mỏ Ngầm",
         "content": "Full 100% Map\nFull Thần Đồng\nKhông Quest",
         "price": 100000,
-        "note": "Trống"
+        "note": "Trống",
+        "game": "Genshin Impact"
     },
     "map06": {
         "name": "Inazuma",
         "content": "Full 100% Map\nFull Thần Đồng\nKhông Quest",
         "price": 300000,
-        "note": "Trống"
+        "note": "Trống",
+        "game": "Genshin Impact"
     },
     "map07": {
         "name": "Enkanomiya",
         "content": "Full 100% Map\nFull Thần Đồng\nKhông Quest",
         "price": 100000,
-        "note": "Trống"
+        "note": "Trống",
+        "game": "Genshin Impact"
     },
     "map08": {
         "name": "Sumeru Rừng Mưa",
         "content": "Full 100% Map\nFull Thần Đồng\nKhông Quest",
         "price": 350000,
-        "note": "Trống"
+        "note": "Trống",
+        "game": "Genshin Impact"
     },
     "map09": {
         "name": "Sumeru Xa Mạc",
         "content": "Full 100% Map\nFull Thần Đồng\nKhông Quest",
         "price": 400000,
-        "note": "Trống"
+        "note": "Trống",
+        "game": "Genshin Impact"
     },
     "map10": {
         "name": "Sumeru Hai Đảo",
         "content": "Full 100% Map\nFull Thần Đồng\nKhông Quest",
         "price": 180000,
-        "note": "Trống"
+        "note": "Trống",
+        "game": "Genshin Impact"
     },
     "map11": {
         "name": "Fontaine",
         "content": "Full 100% Map\nFull Thần Đồng\nKhông Quest",
         "price": 650000,
-        "note": "Trống"
+        "note": "Trống",
+        "game": "Genshin Impact"
     },
     "map12": {
         "name": "Trầm Ngọc Cốc",
         "content": "Full 100% Map\nFull Thần Đồng\nKhông Quest",
         "price": 200000,
-        "note": "Trống"
+        "note": "Trống",
+        "game": "Genshin Impact"
     },
     "map13": {
         "name": "Biển Kỉ Nguyên Cũ",
         "content": "Full 100% Map\nFull Thần Đồng\nKhông Quest",
         "price": 120000,
-        "note": "Trống"
+        "note": "Trống",
+        "game": "Genshin Impact"
     },
     "map14": {
         "name": "Natlan 5.0",
         "content": "Full 100% Map\nFull Thần Đồng\nKhông Quest",
         "price": 200000,
-        "note": "Trống"
+        "note": "Trống",
+        "game": "Genshin Impact"
     },
     "map15": {
         "name": "Natlan 5.2",
         "content": "Full 100% Map\nFull Thần Đồng\nKhông Quest",
         "price": 180000,
-        "note": "Trống"
+        "note": "Trống",
+        "game": "Genshin Impact"
     },
     "map16": {
         "name": "Natlan 5.5",
         "content": "Full 100% Map\nFull Thần Đồng\nKhông Quest",
         "price": 170000,
-        "note": "Trống"
+        "note": "Trống",
+        "game": "Genshin Impact"
     },
     "map17": {
         "name": "Núi Thánh Viễn Cổ",
         "content": "Full 100% Map\nFull Thần Đồng\nKhông Quest",
         "price": 100000,
-        "note": "Trống"
+        "note": "Trống",
+        "game": "Genshin Impact"
     },
     "map18": {
         "name": "Natlan 5.8 Khu Nghỉ Dưỡng Nhàn Nhã",
         "content": "Full 100% Map\nFull Thần Đồng\nKhông Quest",
         "price": 120000,
-        "note": "Trống"
+        "note": "Trống",
+        "game": "Genshin Impact"
     },
     "map19": {
         "name": "Nod-Krai",
         "content": "Full 100% Map\nFull Thần Đồng\nKhông Quest",
         "price": 200000,
-        "note": "Trống"
+        "note": "Trống",
+        "game": "Genshin Impact"
     },
     "map20": {
         "name": "Phong Thần Đồng",
         "content": "Full Vật Phẩm Hiếm",
         "price": 50000,
-        "note": "Trống"
+        "note": "Trống",
+        "game": "Genshin Impact"
     },
     "map21": {
         "name": "Nham Thần Đồng",
         "content": "Full Vật Phẩm Hiếm",
         "price": 80000,
-        "note": "Trống"
+        "note": "Trống",
+        "game": "Genshin Impact"
     },
     "map22": {
         "name": "Lôi Thần Đồng",
         "content": "Full Vật Phẩm Hiếm",
         "price": 100000,
-        "note": "Trống"
+        "note": "Trống",
+        "game": "Genshin Impact"
     },
     "map23": {
         "name": "Thảo Thần Đồng",
         "content": "Full Vật Phẩm Hiếm",
         "price": 190000,
-        "note": "Trống"
+        "note": "Trống",
+        "game": "Genshin Impact"
     },
     "map24": {
         "name": "Thủy Thần Đồng",
         "content": "Full Vật Phẩm Hiếm",
         "price": 190000,
-        "note": "Trống"
+        "note": "Trống",
+        "game": "Genshin Impact"
     },
     "map25": {
         "name": "Hỏa Thần Đồng",
         "content": "Full Vật Phẩm Hiếm",
         "price": 170000,
-        "note": "Trống"
+        "note": "Trống",
+        "game": "Genshin Impact"
     },
     "map26": {
         "name": "Mã Não",
         "content": "Full Vật Phẩm Hiếm",
         "price": 80000,
-        "note": "Trống"
+        "note": "Trống",
+        "game": "Genshin Impact"
     },
     "map27": {
         "name": "Lưu Minh Thạch",
         "content": "Full Vật Phẩm Hiếm",
         "price": 80000,
-        "note": "Trống"
+        "note": "Trống",
+        "game": "Genshin Impact"
     },
     "map28": {
         "name": "Cá Chép Thương Linh",
         "content": "Full Vật Phẩm Hiếm",
         "price": 50000,
-        "note": "Trống"
+        "note": "Trống",
+        "game": "Genshin Impact"
     },
     "map29": {
         "name": "Tịnh Quang Vũ",
         "content": "Full Vật Phẩm Hiếm",
         "price": 40000,
-        "note": "Trống"
+        "note": "Trống",
+        "game": "Genshin Impact"
     },
     "map30": {
         "name": "Nguyệt Thần Đồng",
         "content": "Full Vật Phẩm Hiếm",
         "price": 40000,
-        "note": "Trống"
+        "note": "Trống",
+        "game": "Genshin Impact"
     },
     "map31": {
-        "name": "Tinh Diệp",
+        "name": "Tinh Điệp",
         "content": "120 Tinh Điệp",
         "price": 20000,
-        "note": "Trống"
+        "note": "Trống",
+        "game": "Genshin Impact"
     },
     "map32": {
         "name": "Đặc Sản Vùng",
         "content": "170 Đặc Sản",
         "price": 20000,
-        "note": "Trống"
+        "note": "Trống",
+        "game": "Genshin Impact"
     },
     "map33": {
         "name": "Khoáng Sản",
         "content": "150 Khoáng Sản",
         "price": 20000,
-        "note": "Trống"
+        "note": "Trống",
+        "game": "Genshin Impact"
     },
     "map34": {
         "name": "Boss Tuần",
         "content": "Một Lần Đánh Boss Tuần",
         "price": 2000,
-        "note": "Trống"
+        "note": "Trống",
+        "game": "Genshin Impact"
     },
     "map35": {
         "name": "Xả Nhựa",
         "content": "Một Lần Đi Bí Cảnh Xả Nhựa",
         "price": 2000,
-        "note": "Trống"
+        "note": "Trống",
+        "game": "Genshin Impact"
     },
     "map36": {
         "name": "Nguyên Liệu Quái Cấp 1",
         "content": "100 Nguyên Liệu Quái Cấp 1",
         "price": 17000,
-        "note": "Trống"
+        "note": "Trống",
+        "game": "Genshin Impact"
+    },
+    "map37": {
+        "name": "UP Char Lv 1-90",
+        "content": "UP Char Lv 1-90",
+        "price": 60000,
+        "note": "Trống",
+        "game": "Genshin Impact"
+    },
+    "map38": {
+        "name": "UP Vũ Khí Lv 1-90",
+        "content": "UP Vũ Khí Lv 1-90",
+        "price": 60000,
+        "note": "Trống",
+        "game": "Genshin Impact"
+    },
+    "map39": {
+        "name": "Thiên Phú Lv 1-10",
+        "content": "Thiên Phú Lv 1-10",
+        "price": 30000,
+        "note": "Trống",
+        "game": "Genshin Impact"
+    },
+    "map40": {
+        "name": "Build Char DPS",
+        "content": "Build DPS",
+        "price": 110000,
+        "note": "Trống",
+        "game": "Genshin Impact"
+    },
+    "map41": {
+        "name": "Build Char SP",
+        "content": "Build SP",
+        "price": 100000,
+        "note": "Trống",
+        "game": "Genshin Impact"
+    },
+    "map42": {
+        "name": "Cày 10 Roll",
+        "content": "10 Roll",
+        "price": 60000,
+        "note": "Trống",
+        "game": "Genshin Impact"
+    },
+    "map43": {
+        "name": "Event",
+        "content": "Event",
+        "price": 30000,
+        "note": "Trống",
+        "game": "Genshin Impact"
+    },
+    "map44": {
+        "name": "La Hoàn 9-12",
+        "content": "La Hoàn",
+        "price": 30000,
+        "note": "Trống",
+        "game": "Genshin Impact"
+    },
+    "mlh44": {
+        "name": "La Hoàn Lẻ 1 Tầng",
+        "content": "La Hoàn 1 Tầng Bất Kì",
+        "price": 10000,
+        "note": "Trống",
+        "game": "Genshin Impact"
+    },
+    "map45": {
+        "name": "Nhà Hát 1-8",
+        "content": "Nhà Hát",
+        "price": 30000,
+        "note": "Yêu cầu có đủ nhân vật.",
+        "game": "Genshin Impact"
+    },
+    "map47": {
+        "name": "Nhà Hát 1-10",
+        "content": "Nhà Hát 1-10",
+        "price": 40000,
+        "note": "Yêu cầu có đủ nhân vật.",
+        "game": "Genshin Impact"
+    },
+    "map48": {
+        "name": "Nhà Hát 1-12",
+        "content": "Nhà Hát 1-12",
+        "price": 60000,
+        "note": "Yêu cầu có đủ nhân vật.",
+        "game": "Genshin Impact"
+    },
+    "map46": {
+        "name": "Lao Xiên Cá R5",
+        "content": "Lao Xiên Cá R5",
+        "price": 70000,
+        "note": "Trống",
+        "game": "Genshin Impact"
+    },
+    "map49": {
+        "name": "Ống Đồng R5",
+        "content": "Ống Đồng R5",
+        "price": 70000,
+        "note": "Trống",
+        "game": "Genshin Impact"
+    },
+    "map50": {
+        "name": "Lao Xiên Cá R1",
+        "content": "Lao Xiên Cá R1",
+        "price": 30000,
+        "note": "Trống",
+        "game": "Genshin Impact"
+    },
+    "map51": {
+        "name": "Ống Đồng R1",
+        "content": "Ống Đồng R1",
+        "price": 30000,
+        "note": "Trống",
+        "game": "Genshin Impact"
+    },
+    "map52": {
+        "name": "Giải Đấu Siêu Cấp Boulder",
+        "content": "Full Event",
+        "price": 30000,
+        "note": "Trống",
+        "game": "Honkai: Star Rail"
+    },
+    "map53": {
+        "name": "Bảo Tàng Lịch Sử",
+        "content": "Full Event",
+        "price": 30000,
+        "note": "Trống",
+        "game": "Honkai: Star Rail"
+    },
+    "map54": {
+        "name": "Phố Cũ Kim Nhân",
+        "content": "Full Event",
+        "price": 40000,
+        "note": "Trống",
+        "game": "Honkai: Star Rail"
+    },
+    "map55": {
+        "name": "Cuộc Chiến Aethetherium",
+        "content": "Full Event",
+        "price": 70000,
+        "note": "Trống",
+        "game": "Honkai: Star Rail"
+    },
+    "map56": {
+        "name": "Hồ Trai Chí Dị",
+        "content": "Full Event",
+        "price": 70000,
+        "note": "Trống",
+        "game": "Honkai: Star Rail"
+    },
+    "map57": {
+        "name": "Góp Nhặt Thú Cưng",
+        "content": "Full Event",
+        "price": 40000,
+        "note": "Trống",
+        "game": "Honkai: Star Rail"
+    },
+    "map58": {
+        "name": "Tin Tức Khách Tìm Mộng",
+        "content": "Full Event",
+        "price": 40000,
+        "note": "Trống",
+        "game": "Honkai: Star Rail"
+    },
+    "map59": {
+        "name": "Cờ Tỷ Phú",
+        "content": "Full Event",
+        "price": 60000,
+        "note": "Trống",
+        "game": "Honkai: Star Rail"
+    },
+    "map60": {
+        "name": "Giai Thoại Trong Ly",
+        "content": "Full Event",
+        "price": 70000,
+        "note": "Trống",
+        "game": "Honkai: Star Rail"
+    },
+    "map61": {
+        "name": "Nhật Kí Vượt Ngục",
+        "content": "Full Event",
+        "price": 70000,
+        "note": "Trống",
+        "game": "Honkai: Star Rail"
+    },
+    "map62": {
+        "name": "Đài Truyền Hình Ác Mộng",
+        "content": "Full Event",
+        "price": 50000,
+        "note": "Trống",
+        "game": "Honkai: Star Rail"
+    },
+    "map63": {
+        "name": "Cậu Bé Đồng Hồ",
+        "content": "Full Event",
+        "price": 70000,
+        "note": "Trống",
+        "game": "Honkai: Star Rail"
+    },
+    "map64": {
+        "name": "Chim Giấy Đại Chiến",
+        "content": "Full Event",
+        "price": 40000,
+        "note": "Trống",
+        "game": "Honkai: Star Rail"
+    },
+    "map65": {
+        "name": "Lễ Diễn Võ Trời Sao",
+        "content": "Full Event",
+        "price": 70000,
+        "note": "Trống",
+        "game": "Honkai: Star Rail"
+    },
+    "map66": {
+        "name": "Văn Phòng Gào",
+        "content": "Full Event",
+        "price": 30000,
+        "note": "Trống",
+        "game": "Honkai: Star Rail"
+    },
+    "map67": {
+        "name": "Hải Cẩu Cưng",
+        "content": "Full Event",
+        "price": 30000,
+        "note": "Trống",
+        "game": "Honkai: Star Rail"
+    },
+    "map68": {
+        "name": "Trạm Không Gian",
+        "content": "Rush Full Rương và Vật Phẩm Hiếm (Chim giấy, Nhộng,...)",
+        "price": 30000,
+        "note": "Trống",
+        "game": "Honkai: Star Rail"
+    },
+    "map69": {
+        "name": "Jarilo - VI",
+        "content": "Rush Full Rương và Vật Phẩm Hiếm (Chim giấy, Nhộng,...)",
+        "price": 70000,
+        "note": "Trống",
+        "game": "Honkai: Star Rail"
+    },
+    "map70": {
+        "name": "Xianzhou",
+        "content": "Rush Full Rương và Vật Phẩm Hiếm (Chim giấy, Nhộng,...)",
+        "price": 150000,
+        "note": "Trống",
+        "game": "Honkai: Star Rail"
+    },
+    "map71": {
+        "name": "Penacony",
+        "content": "Rush Full Rương và Vật Phẩm Hiếm (Chim giấy, Nhộng,...)",
+        "price": 250000,
+        "note": "Trống",
+        "game": "Honkai: Star Rail"
+    },
+    "map72": {
+        "name": "Amphoreus",
+        "content": "Rush Full Rương và Vật Phẩm Hiếm (Chim giấy, Nhộng,...)",
+        "price": 400000,
+        "note": "Trống",
+        "game": "Honkai: Star Rail"
+    },
+    "map73": {
+        "name": "Full Cấp Tượng Đồng Hồ",
+        "content": "Rush Full Rương và Vật Phẩm Hiếm (Chim giấy, Nhộng,...)",
+        "price": 300000,
+        "note": "Trống",
+        "game": "Honkai: Star Rail"
+    },
+    "map74": {
+        "name": "Full Cấp Thủy Triều",
+        "content": "Rush Full Rương và Vật Phẩm Hiếm (Chim giấy, Nhộng,...)",
+        "price": 250000,
+        "note": "Trống",
+        "game": "Honkai: Star Rail"
+    },
+    "map75": {
+        "name": "Thảm Hoạ Côn Trùng",
+        "content": "Full Vũ Trụ Mô Phỏng",
+        "price": 190000,
+        "note": "Trống",
+        "game": "Honkai: Star Rail"
+    },
+    "map76": {
+        "name": "Vàng Và Máy Móc",
+        "content": "Full Vũ Trụ Mô Phỏng",
+        "price": 250000,
+        "note": "Trống",
+        "game": "Honkai: Star Rail"
+    },
+    "map77": {
+        "name": "Vũ Trụ Sai Phân",
+        "content": "Full Vũ Trụ Mô Phỏng",
+        "price": 280000,
+        "note": "Trống",
+        "game": "Honkai: Star Rail"
+    },
+    "map78": {
+        "name": "Vùng Không Biết",
+        "content": "Full Vũ Trụ Mô Phỏng",
+        "price": 280000,
+        "note": "Trống",
+        "game": "Honkai: Star Rail"
+    },
+    "map79": {
+        "name": "Up Char Lv80",
+        "content": "Up Char Lv80",
+        "price": 20000,
+        "note": "Trống",
+        "game": "Honkai: Star Rail"
+    },
+    "map80": {
+        "name": "Up Nón Lv80",
+        "content": "Up Nón Lv80",
+        "price": 20000,
+        "note": "Trống",
+        "game": "Honkai: Star Rail"
+    },
+    "map81": {
+        "name": "Vết Tích",
+        "content": "Vết Tích",
+        "price": 30000,
+        "note": "Trống",
+        "game": "Honkai: Star Rail"
+    },
+    "map82": {
+        "name": "Di Vật - Vị Diện",
+        "content": "Di Vật - Vị Diện",
+        "price": 50000,
+        "note": "Trống",
+        "game": "Honkai: Star Rail"
+    },
+    "map83": {
+        "name": "Norfall Barrens",
+        "content": "Rush full 100% Map và Sonance",
+        "price": 50000,
+        "note": "Trống",
+        "game": "Wuthering Waves"
+    },
+    "map84": {
+        "name": "Jinzhou",
+        "content": "Rush full 100% Map và Sonance",
+        "price": 50000,
+        "note": "Trống",
+        "game": "Wuthering Waves"
+    },
+    "map85": {
+        "name": "Gorges Of Spirits",
+        "content": "Rush full 100% Map và Sonance",
+        "price": 50000,
+        "note": "Trống",
+        "game": "Wuthering Waves"
+    },
+    "map86": {
+        "name": "Tiger's Maw Mine",
+        "content": "Rush full 100% Map và Sonance",
+        "price": 50000,
+        "note": "Trống",
+        "game": "Wuthering Waves"
+    },
+    "map87": {
+        "name": "Wuming Bay",
+        "content": "Rush full 100% Map và Sonance",
+        "price": 50000,
+        "note": "Trống",
+        "game": "Wuthering Waves"
+    },
+    "map88": {
+        "name": "Port City Of Guixu",
+        "content": "Rush full 100% Map và Sonance",
+        "price": 80000,
+        "note": "Trống",
+        "game": "Wuthering Waves"
+    },
+    "map89": {
+        "name": "Dim Forest",
+        "content": "Rush full 100% Map và Sonance",
+        "price": 80000,
+        "note": "Trống",
+        "game": "Wuthering Waves"
+    },
+    "map90": {
+        "name": "Whining Aix's Mire",
+        "content": "Rush full 100% Map và Sonance",
+        "price": 80000,
+        "note": "Trống",
+        "game": "Wuthering Waves"
+    },
+    "map91": {
+        "name": "Desorock Highlands",
+        "content": "Rush full 100% Map và Sonance",
+        "price": 80000,
+        "note": "Trống",
+        "game": "Wuthering Waves"
+    },
+    "map92": {
+        "name": "Central Plains",
+        "content": "Rush full 100% Map và Sonance",
+        "price": 80000,
+        "note": "Trống",
+        "game": "Wuthering Waves"
+    },
+    "map93": {
+        "name": "MT. Firmament",
+        "content": "Rush full 100% Map và Chông",
+        "price": 100000,
+        "note": "Trống",
+        "game": "Wuthering Waves"
+    },
+    "map94": {
+        "name": "Ragunna City",
+        "content": "Rush full 100% Map và Sonance",
+        "price": 10000,
+        "note": "Trống",
+        "game": "Wuthering Waves"
+    },
+    "map95": {
+        "name": "Hallowed Reach",
+        "content": "Rush full 100% Map và Sonance",
+        "price": 60000,
+        "note": "Trống",
+        "game": "Wuthering Waves"
+    },
+    "map96": {
+        "name": "Averardo Vault",
+        "content": "Rush full 100% Map và Sonance",
+        "price": 60000,
+        "note": "Trống",
+        "game": "Wuthering Waves"
+    },
+    "map97": {
+        "name": "Penitent's End",
+        "content": "Rush full 100% Map và Sonance",
+        "price": 60000,
+        "note": "Trống",
+        "game": "Wuthering Waves"
+    },
+    "map98": {
+        "name": "Whisperwind Haven",
+        "content": "Rush full 100% Map và Sonance",
+        "price": 60000,
+        "note": "Trống",
+        "game": "Wuthering Waves"
+    },
+    "map99": {
+        "name": "Nimbus Sanctum",
+        "content": "Rush full 100% Map và Sonance",
+        "price": 70000,
+        "note": "Trống",
+        "game": "Wuthering Waves"
+    },
+    "map100": {
+        "name": "Fagaceae Peninsula",
+        "content": "Rush full 100% Map và Sonance",
+        "price": 60000,
+        "note": "Trống",
+        "game": "Wuthering Waves"
+    },
+    "map101": {
+        "name": "Thessaleo Fells",
+        "content": "Rush full 100% Map và Sonance",
+        "price": 60000,
+        "note": "Trống",
+        "game": "Wuthering Waves"
+    },
+    "map102": {
+        "name": "Vault Underground",
+        "content": "Rush full 100% Map và Sonance",
+        "price": 60000,
+        "note": "Trống",
+        "game": "Wuthering Waves"
+    },
+    "map103": {
+        "name": "Riccioli Islands",
+        "content": "Rush full 100% Map và Sonance",
+        "price": 60000,
+        "note": "Trống",
+        "game": "Wuthering Waves"
+    },
+    "map104": {
+        "name": "Avinoleum",
+        "content": "Rush full 100% Map và Sonance",
+        "price": 80000,
+        "note": "Trống",
+        "game": "Wuthering Waves"
+    },
+    "map105": {
+        "name": "Beohr Waters",
+        "content": "Rush full 100% Map và Sonance",
+        "price": 60000,
+        "note": "Trống",
+        "game": "Wuthering Waves"
+    },
+    "map106": {
+        "name": "Black Shores Archipelago",
+        "content": "Rush full 100% Map và Sonance",
+        "price": 50000,
+        "note": "Trống",
+        "game": "Wuthering Waves"
+    },
+    "map107": {
+        "name": "Tethys' Deep",
+        "content": "Rush full 100% Map và Sonance",
+        "price": 50000,
+        "note": "Trống",
+        "game": "Wuthering Waves"
+    },
+    "map108": {
+        "name": "Sonance Casket",
+        "content": "Sonance Casket",
+        "price": 100000,
+        "note": "Trống",
+        "game": "Wuthering Waves"
+    },
+    "map109": {
+        "name": "Chuông",
+        "content": "Chuông",
+        "price": 60000,
+        "note": "Trống",
+        "game": "Wuthering Waves"
+    },
+    "map110": {
+        "name": "Blobfly",
+        "content": "Blobfly",
+        "price": 60000,
+        "note": "Trống",
+        "game": "Wuthering Waves"
+    },
+    "map111": {
+        "name": "Ragunna",
+        "content": "Ragunna",
+        "price": 70000,
+        "note": "Trống",
+        "game": "Wuthering Waves"
+    },
+    "map112": {
+        "name": "Cost 1",
+        "content": "Farm Cost 1",
+        "price": 1000,
+        "note": "Trống",
+        "game": "Wuthering Waves"
+    },
+    "map113": {
+        "name": "Cost 2",
+        "content": "Farm Cost 2",
+        "price": 2000,
+        "note": "Trống",
+        "game": "Wuthering Waves"
+    },
+    "map114": {
+        "name": "Cost 4",
+        "content": "Farm Cost 4",
+        "price": 2000,
+        "note": "Trống",
+        "game": "Wuthering Waves"
+    },
+    "map115": {
+        "name": "Data Bank 1-15",
+        "content": "Data Bank 1-15 10k/1 Cấp",
+        "price": 10000,
+        "note": "Trống",
+        "game": "Wuthering Waves"
+    },
+    "map116": {
+        "name": "Data Bank 15-21",
+        "content": "Data Bank 15-21 15k/1 Cấp",
+        "price": 15000,
+        "note": "Trống",
+        "game": "Wuthering Waves"
+    },
+    "map117": {
+        "name": "Up Char 1-90",
+        "content": "Up Char 1-90",
+        "price": 50000,
+        "note": "Trống",
+        "game": "Wuthering Waves"
+    },
+    "map118": {
+        "name": "Up Vũ Khí 1-90",
+        "content": "Up Vũ Khí 1-90",
+        "price": 50000,
+        "note": "Trống",
+        "game": "Wuthering Waves"
+    },
+    "map119": {
+        "name": "Up Thiên Phú 10-10-10",
+        "content": "Up Thiên Phú 10-10-10",
+        "price": 50000,
+        "note": "Trống",
+        "game": "Wuthering Waves"
+    },
+    "map120": {
+        "name": "Build Char DPS",
+        "content": "Build Char DPS",
+        "price": 110000,
+        "note": "Trống",
+        "game": "Wuthering Waves"
+    },
+    "map121": {
+        "name": "Build Char SP",
+        "content": "Build Char SP",
+        "price": 100000,
+        "note": "Trống",
+        "game": "Wuthering Waves"
+    },
+    "map122": {
+        "name": "Main Quest",
+        "content": "Main Quest 30k/Màn",
+        "price": 30000,
+        "note": "Trống",
+        "game": "Wuthering Waves"
+    },
+    "map123": {
+        "name": "Companion Quest 25k/Char",
+        "content": "Companion Quest",
+        "price": 25000,
+        "note": "Trống",
+        "game": "Wuthering Waves"
+    },
+    "map124": {
+        "name": "Exploration Quest",
+        "content": "Exploration Quest 25k/1",
+        "price": 25000,
+        "note": "Trống",
+        "game": "Wuthering Waves"
+    },
+    "map125": {
+        "name": "Side Quest",
+        "content": "Side Quest 5K/1",
+        "price": 5000,
+        "note": "Không Tính Event",
+        "game": "Wuthering Waves"
+    },
+    "map126": {
+        "name": "Nhiệm Vụ Chương Chính Tuyến",
+        "content": "Chương Chính Tuyến 50k/1",
+        "price": 50000,
+        "note": "Trống",
+        "game": "Zenless Zone Zero"
+    },
+    "map127": {
+        "name": "Nhiệm Vụ Người Đại Diện",
+        "content": "Người Đại Diện 20k/1",
+        "price": 20000,
+        "note": "Trống",
+        "game": "Zenless Zone Zero"
+    },
+    "map128": {
+        "name": "Chiến Đấu",
+        "content": "Chiến Đấu 8k/1",
+        "price": 8000,
+        "note": "Trống",
+        "game": "Zenless Zone Zero"
+    },
+    "map129": {
+        "name": "Điều Tra",
+        "content": "Điều Tra 8k/1",
+        "price": 8000,
+        "note": "Trống",
+        "game": "Zenless Zone Zero"
+    },
+    "map130": {
+        "name": "Ác Chiến",
+        "content": "Ác Chiến 2k/1",
+        "price": 2000,
+        "note": "Trống",
+        "game": "Zenless Zone Zero"
+    },
+    "map131": {
+        "name": "Up Char Lv1-60",
+        "content": "Up Char Lv1-60",
+        "price": 25000,
+        "note": "Trống",
+        "game": "Zenless Zone Zero"
+    },
+    "map132": {
+        "name": "Up Vũ Khí Lv1-60",
+        "content": "Up Vũ Khí Lv1-60",
+        "price": 25000,
+        "note": "Trống",
+        "game": "Zenless Zone Zero"
+    },
+    "map133": {
+        "name": "Up Skill",
+        "content": "Up Skill 20k/1",
+        "price": 20000,
+        "note": "Trống",
+        "game": "Zenless Zone Zero"
+    },
+    "map134": {
+        "name": "Build Char DPS",
+        "content": "Build Char DPS",
+        "price": 120000,
+        "note": "Trống",
+        "game": "Zenless Zone Zero"
+    },
+    "map135": {
+        "name": "Build Char SP",
+        "content": "Build Char SP",
+        "price": 100000,
+        "note": "Trống",
+        "game": "Zenless Zone Zero"
+    },
+    "map136": {
+        "name": "Bí Ẩn Tầng Gãy",
+        "content": "Bí Ẩn Tầng Gãy",
+        "price": 70000,
+        "note": "Trống",
+        "game": "Zenless Zone Zero"
+    },
+    "map137": {
+        "name": "Bữa Tiệc Bá Chủ",
+        "content": "Bữa Tiệc Bá Chủ",
+        "price": 50000,
+        "note": "Trống",
+        "game": "Zenless Zone Zero"
+    },
+    "map138": {
+        "name": "Vùng Đất Hoang Vu",
+        "content": "Vùng Đất Hoang Vu",
+        "price": 70000,
+        "note": "Trống",
+        "game": "Zenless Zone Zero"
+    },
+    "map139": {
+        "name": "Ngày Đẹp Như Mơ",
+        "content": "Ngày Đẹp Như Mơ",
+        "price": 60000,
+        "note": "Trống",
+        "game": "Zenless Zone Zero"
+    },
+    "map140": {
+        "name": "Giải Cần Thủ",
+        "content": "Giải Cần Thủ",
+        "price": 60000,
+        "note": "Trống",
+        "game": "Zenless Zone Zero"
+    },
+    "map141": {
+        "name": "Đỏ (Full)",
+        "content": "Đỏ (Full)",
+        "price": 30000,
+        "note": "Trống",
+        "game": "Zenless Zone Zero"
+    },
+    "map142": {
+        "name": "Xanh ( Full 1+2)",
+        "content": "Xanh ( Full 1+2)",
+        "price": 40000,
+        "note": "Trống",
+        "game": "Zenless Zone Zero"
+    },
+    "map143": {
+        "name": "Tập Kích Nguy Cấp",
+        "content": "Tập Kích Nguy Cấp",
+        "price": 20000,
+        "note": "Trống",
+        "game": "Zenless Zone Zero"
+    },
+    "map144": {
+        "name": "Lẻ Shiyu",
+        "content": "Lẻ Shiyu 5k/1",
+        "price": 5000,
+        "note": "Trống",
+        "game": "Zenless Zone Zero"
+    },
+    "map145": {
+        "name": "Lẻ Tập Kích",
+        "content": "Lẻ Tập Kích 5k/1",
+        "price": 5000,
+        "note": "Trống",
+        "game": "Zenless Zone Zero"
+    },
+    "map146": {
+        "name": "HuangLong",
+        "content": "Rush full 100% Map và Sonance",
+        "price": 600000,
+        "note": "Trống",
+        "game": "Wuthering Waves"
+    },
+    "map147": {
+        "name": "The Black Shores",
+        "content": "Rush full 100% Map và Sonance",
+        "price": 150000,
+        "note": "Trống",
+        "game": "Wuthering Waves"
+    },
+    "map148": {
+        "name": "Rinascita",
+        "content": "Rush full 100% Map và Sonance",
+        "price": 650000,
+        "note": "Trống",
+        "game": "Wuthering Waves"
+    },
+    "map149": {
+        "name": "Gói Khác 1",
+        "content": "Gói Khác 1",
+        "price": 10000,
+        "note": "Trống",
+        "game": "Wuthering Waves"
+    },
+    "map150": {
+        "name": "Gói Khác 2",
+        "content": "Gói Khác 2",
+        "price": 50000,
+        "note": "Trống",
+        "game": "Wuthering Waves"
+    },
+    "map151": {
+        "name": "Gói Khác 3",
+        "content": "Gói Khác 3",
+        "price": 100000,
+        "note": "Trống",
+        "game": "Wuthering Waves"
+    },
+    "map152": {
+        "name": "Gói Khác 1",
+        "content": "Gói Khác 1",
+        "price": 10000,
+        "note": "Trống",
+        "game": "Genshin Impact"
+    },
+    "map153": {
+        "name": "Gói Khác 2",
+        "content": "Gói Khác 2",
+        "price": 50000,
+        "note": "Trống",
+        "game": "Genshin Impact"
+    },
+    "map154": {
+        "name": "Gói Khác 3",
+        "content": "Gói Khác 3",
+        "price": 100000,
+        "note": "Trống",
+        "game": "Genshin Impact"
+    },
+    "map155": {
+        "name": "Gói Khác 1",
+        "content": "Gói Khác 1",
+        "price": 10000,
+        "note": "Trống",
+        "game": "Honkai: Star Rail"
+    },
+    "map156": {
+        "name": "Gói Khác 2",
+        "content": "Gói Khác 2",
+        "price": 50000,
+        "note": "Trống",
+        "game": "Honkai: Star Rail"
+    },
+    "map157": {
+        "name": "Gói Khác 3",
+        "content": "Gói Khác 3",
+        "price": 100000,
+        "note": "Trống",
+        "game": "Honkai: Star Rail"
+    },
+    "map158": {
+        "name": "Gói Khác 1",
+        "content": "Gói Khác 1",
+        "price": 10000,
+        "note": "Trống",
+        "game": "Zenless Zone Zero"
+    },
+    "map159": {
+        "name": "Gói Khác 2",
+        "content": "Gói Khác 2",
+        "price": 50000,
+        "note": "Trống",
+        "game": "Zenless Zone Zero"
+    },
+    "map160": {
+        "name": "Gói Khác 3",
+        "content": "Gói Khác 3",
+        "price": 100000,
+        "note": "Trống",
+        "game": "Zenless Zone Zero"
     }
 }
