@@ -11,6 +11,7 @@ from email.header import decode_header
 from flask import Flask
 from threading import Thread
 from dotenv import load_dotenv
+from datetime import datetime, timedelta, timezone # <--- THÊM DÒNG NÀY
 import random 
 import string 
 import pymongo
@@ -31,17 +32,22 @@ CHANNEL_ID_CONSULT = int(os.getenv("CHANNEL_ID_CONSULT"))
 CHANNEL_ID_LOG = int(os.getenv("CHANNEL_ID_LOG", 0))
 CHANNEL_ID_IMAGE = int(os.getenv("CHANNEL_ID_IMAGE", 0))
 CHANNEL_ID_MANAGEMENT = int(os.getenv("CHANNEL_ID_MANAGEMENT"))
+CHANNEL_ID_STATS = int(os.getenv("CHANNEL_ID_STATS", 0))
 
 # --- CẤU HÌNH MONGODB ---
 MONGO_URI = os.getenv("MONGO_URI") 
 mongo_client = pymongo.MongoClient(MONGO_URI)
 db = mongo_client["GachazShop"] 
-
+# --- CẤU HÌNH TIMEZONE VIỆT NAM (UTC+7) ---
+VN_TZ = timezone(timedelta(hours=7))
 # 1. Collection lưu đơn hàng/ảnh
 col_images = db["order_images"] 
 
 # 2. Collection lưu sản phẩm
 col_products = db["products"] 
+
+# --- THÊM COLLECTION DOANH THU MỚI ---
+col_revenue = db["revenue_stats"]
 
 # --- CẤU HÌNH DANH SÁCH ---
 LIST_GAMES = ["Genshin Impact", "Wuthering Waves", "Honkai: Star Rail", "Zenless Zone Zero"]
@@ -534,7 +540,6 @@ class ConfirmNoImageView(View):
     async def cancel(self, interaction: discord.Interaction, button: Button):
         await interaction.response.edit_message(content="🚫 Đã hủy thao tác. Hãy gửi ảnh vào đây và bấm Lưu lại.", view=None)
 
-# --- TÌM ĐOẠN CLASS NÀY VÀ THAY THẾ TOÀN BỘ ---
 class ThreadOrderView(View):
     def __init__(self, order_data, original_message):
         super().__init__(timeout=None)
@@ -542,68 +547,44 @@ class ThreadOrderView(View):
         self.original_message = original_message 
         self.has_saved_image = False 
 
-    @discord.ui.button(label="💾 Lưu Ảnh", style=discord.ButtonStyle.primary, emoji="📸", row=1)
+    @discord.ui.button(label="💾 Lưu Ảnh Vĩnh Viễn", style=discord.ButtonStyle.primary, emoji="📸", row=1)
     async def save_image(self, interaction: discord.Interaction, button: Button):
-        # 1. Defer để bot có thời gian tải và up ảnh (tránh lỗi timeout)
         await interaction.response.defer()
         
-        # Kiểm tra kênh Log có tồn tại không
         log_chan = interaction.guild.get_channel(CHANNEL_ID_IMAGE)
         if not log_chan:
-            return await interaction.followup.send("❌ Lỗi: Không tìm thấy kênh LOG để lưu trữ ảnh (Kiểm tra lại CHANNEL_ID_IMAGE trong .env).", ephemeral=True)
+            return await interaction.followup.send("❌ Lỗi: Chưa cấu hình CHANNEL_ID_IMAGE", ephemeral=True)
 
-        # 2. Tìm ảnh trong Thread hiện tại
         files_to_save = []
         async for msg in interaction.channel.history(limit=50):
             if msg.attachments:
                 for att in msg.attachments:
                     if att.content_type and "image" in att.content_type:
-                        # Chuẩn bị file để re-upload
                         try:
                             file = await att.to_file()
                             files_to_save.append(file)
-                        except:
-                            pass
+                        except: pass
 
         if not files_to_save:
-            return await interaction.followup.send("❌ Không tìm thấy ảnh nào trong chủ đề này!", ephemeral=True)
+            return await interaction.followup.send("❌ Không tìm thấy ảnh nào!", ephemeral=True)
 
         try:
-            # 3. Gửi ảnh sang kênh LOG (Để lưu vĩnh viễn)
             saved_urls = []
-            
-            # Discord chỉ cho gửi tối đa 10 file 1 lần, ta chia nhỏ nếu cần, ở đây giả sử < 10 ảnh
             uploaded_msg = await log_chan.send(
                 content=f"📸 **Lưu trữ ảnh đơn hàng #{self.order_data['order_id']}**", 
                 files=files_to_save
             )
-            
-            # 4. Lấy URL mới từ kênh LOG
-            for att in uploaded_msg.attachments:
-                saved_urls.append(att.url)
+            for att in uploaded_msg.attachments: saved_urls.append(att.url)
 
-            # 5. Lưu URL mới vào MongoDB
-            order_id = self.order_data['order_id']
             col_images.update_one(
-                {"order_id": order_id},
-                {
-                    "$set": {
-                        "order_id": order_id,
-                        "amount": self.order_data['amount'],
-                        "details": self.order_data['details'],
-                        "booster": self.order_data.get('booster', 'Không chọn'),
-                        "images": saved_urls, # Lưu URL vĩnh viễn
-                        "saved_at": discord.utils.utcnow()
-                    }
-                },
+                {"order_id": self.order_data['order_id']},
+                {"$set": {"images": saved_urls, "saved_at": discord.utils.utcnow()}},
                 upsert=True
             )
             self.has_saved_image = True
-            await interaction.followup.send(f"✅ **Đã sao lưu {len(saved_urls)} Thành Công !!**", ephemeral=True)
-            
+            await interaction.followup.send(f"✅ **Đã sao lưu {len(saved_urls)} ảnh thành công!**", ephemeral=True)
         except Exception as e:
-            print(f"Lỗi Lưu Ảnh: {e}")
-            await interaction.followup.send(f"❌ Lỗi khi xử lý ảnh: {e}", ephemeral=True)
+            await interaction.followup.send(f"❌ Lỗi lưu ảnh: {e}", ephemeral=True)
 
     @discord.ui.button(label="📝 Ghi Chú", style=discord.ButtonStyle.secondary, emoji="✏️", row=1)
     async def add_note(self, interaction: discord.Interaction, button: Button):
@@ -613,13 +594,11 @@ class ThreadOrderView(View):
     async def report_done(self, interaction: discord.Interaction, button: Button):
         if not self.has_saved_image:
             check_db = col_images.find_one({"order_id": self.order_data['order_id']})
-            # Kiểm tra kỹ hơn: DB có ảnh không và ảnh đó có phải ảnh sống không (tạm thời chỉ check có ảnh)
             if not check_db or "images" not in check_db or not check_db["images"]:
                 view_warning = ConfirmNoImageView(self, interaction)
                 return await interaction.response.send_message(
-                    "⚠️ **CẢNH BÁO:** Bạn chưa **Lưu Ảnh**.\nNếu bạn báo xong đơn ngay, ảnh sẽ bị MẤT và khách không xem được.\nBạn có chắc chắn muốn tiếp tục?", 
-                    view=view_warning, 
-                    ephemeral=True
+                    "⚠️ **CẢNH BÁO:** Bạn chưa **Lưu Ảnh**.\nBạn có chắc chắn muốn báo xong?", 
+                    view=view_warning, ephemeral=True
                 )
             else:
                 self.has_saved_image = True 
@@ -633,38 +612,96 @@ class ThreadOrderView(View):
         await interaction.channel.delete()
 
     async def finish_order_logic(self, interaction: discord.Interaction, force=False):
-        db_data = col_images.find_one({"order_id": self.order_data['order_id']})
-        note_content = db_data.get("note", "Không có") if db_data else "Không có"
+        # 1. GỬI DM CHO KHÁCH HÀNG
+        user_id = self.order_data.get('user_id') 
+        if user_id:
+            try:
+                user = await bot.fetch_user(user_id)
+                embed_dm = discord.Embed(title="✅ ĐƠN HÀNG ĐÃ HOÀN THÀNH", color=0x2ecc71)
+                embed_dm.description = f"Đơn hàng **#{self.order_data['order_id']}** của bạn đã hoàn tất.\nCảm ơn bạn đã tin tưởng dịch vụ!"
+                embed_dm.add_field(name="Chi tiết", value=f"```{self.order_data['details']}```")
+                embed_dm.set_footer(text="Gachaz Shop - Uy tín - Tốc độ")
+                await user.send(embed=embed_dm)
+            except Exception as e:
+                print(f"❌ Không gửi được DM cho khách: {e}")
 
+        # 2. TÍNH TOÁN & LƯU DB
+        now_vn = datetime.now(VN_TZ)
+        revenue_doc = {
+            "order_id": self.order_data['order_id'],
+            "amount": self.order_data['amount'],
+            "details": self.order_data['details'],
+            "date": now_vn, 
+            "month_str": now_vn.strftime("%m/%Y") 
+        }
+        col_revenue.insert_one(revenue_doc)
+
+        current_month_str = now_vn.strftime("%m/%Y")
+        pipeline = [
+            {"$match": {"month_str": current_month_str}},
+            {"$group": {"_id": None, "total": {"$sum": "$amount"}}}
+        ]
+        result = list(col_revenue.aggregate(pipeline))
+        total_month = result[0]['total'] if result else 0
+
+        # 3. GỬI LOG VÀO KÊNH THÔNG BÁO (Kênh LOG - Chỉ báo xong đơn)
         log_chan = interaction.guild.get_channel(CHANNEL_ID_LOG)
         if log_chan:
-            embed = discord.Embed(title="**✧ 🎉ĐƠN HÀNG HOÀN THÀNH ✧**", color=0x3498db)
-            desc_lines = []
+            embed_log = discord.Embed(title="**✧ 🎉ĐƠN HÀNG HOÀN THÀNH ✧**", color=0x3498db)
+            desc_lines = [
+                f"**Mã Đơn :** `#{self.order_data['order_id']}`",
+                f"**Giá Trị :** **{self.order_data['amount']:,} VNĐ**", 
+            ]
             if self.order_data['booster'] != "Không chọn":
-                desc_lines.append(f"**Người Cày :** {self.order_data['booster']}\n")
-            desc_lines.append(f"**Mã Đơn :** `#{self.order_data['order_id']}`\n")
-            desc_lines.append(f"**Giá Tiền :** **{self.order_data['amount']:,} VNĐ**")
-
-            embed.description = "\n".join(desc_lines)
-            embed.add_field(name="Nội Dung", value=f"```{self.order_data['details']}```", inline=False)
-            embed.set_footer(text="Cảm ơn quý khách đã tin tưởng sử dụng dịch vụ!")
-            embed.timestamp = discord.utils.utcnow()
+                desc_lines.append(f"**Người Cày :** {self.order_data['booster']}")
             
-            # Gửi thông báo hoàn thành
-            await log_chan.send(embed=embed)
+            embed_log.description = "\n".join(desc_lines)
+            embed_log.add_field(name="Nội Dung", value=f"```{self.order_data['details']}```", inline=False)
+            embed_log.timestamp = discord.utils.utcnow()
+            await log_chan.send(embed=embed_log)
 
+        # ================================================================
+        # 4. GỬI VÀO KÊNH THỐNG KÊ (ĐỊNH DẠNG GIỐNG KÊNH LOG)
+        # ================================================================
+        stats_chan = interaction.guild.get_channel(CHANNEL_ID_STATS)
+        if stats_chan:
+            # Tạo Embed màu Vàng Cam (Gold)
+            embed_stats = discord.Embed(title="📈 CẬP NHẬT DOANH THU", color=0xf1c40f)
+            
+            # Tạo danh sách các dòng (List lines)
+            stats_lines = [
+                f"**Mã Đơn :** `#{self.order_data['order_id']}`",
+                f"**Tiền Đơn Này :** **+{self.order_data['amount']:,} VNĐ**",
+                f"**Tổng Tháng {now_vn.month} :** **{total_month:,} VNĐ**"
+            ]
+            
+            # Thêm người cày nếu có
+            if self.order_data.get('booster') and self.order_data['booster'] != "Không chọn":
+                stats_lines.append(f"**Người Cày :** {self.order_data['booster']}")
+            
+            # Nối các dòng lại bằng dấu xuống dòng
+            embed_stats.description = "\n".join(stats_lines)
+            
+            # Thêm phần nội dung chi tiết ở dưới cùng
+            embed_stats.add_field(
+                name="Chi Tiết Đơn",
+                value=f"```{self.order_data['details']}```",
+                inline=False
+            )
+            
+            embed_stats.timestamp = discord.utils.utcnow()
+            await stats_chan.send(embed=embed_stats)
+
+        # 5. KHÓA NÚT
         try:
             disabled_view = AdminOrderView(self.order_data)
-            disabled_view.children[0].label = "ĐÃ HOÀN THÀNH (Thread)"
+            disabled_view.children[0].label = "ĐÃ HOÀN THÀNH"
             disabled_view.children[0].style = discord.ButtonStyle.secondary
             disabled_view.children[0].disabled = True
             await self.original_message.edit(view=disabled_view)
-        except Exception as e:
-            print(f"Không thể sửa tin nhắn gốc: {e}")
+        except: pass
 
-        msg = "✅ **Đã báo cáo đơn hàng hoàn thành!**"
-        if force: msg += " (Lưu ý: Đơn này chưa được lưu ảnh)."
-        
+        msg = "✅ **Đã báo cáo xong!**"
         if interaction.response.is_done():
             await interaction.followup.send(msg)
         else:
@@ -720,6 +757,22 @@ async def process_successful_payment(user_id, amount_received, description):
 
     print(f"🔄 Đang xử lý đơn #{order_id} cho User {user_id}...")
 
+    # --- 1. TẠO EMBED KHÁCH HÀNG (Tạo trước để dùng chung cho cả Ticket và DM) ---
+    embed_cus = discord.Embed(title="✅ THANH TOÁN THÀNH CÔNG", color=0x2ecc71)
+    desc_lines = [
+        "**Cảm ơn bạn! Hệ thống đã ghi nhận giao dịch.**\n",
+        f"**Mã Đơn Hàng :** `#{order_id}`\n",
+        f"**Số Tiền :** {amount_received:,} VNĐ\n"
+    ]
+    if booster_name != "Không chọn":
+        desc_lines.append(f"**Người Cày :** {booster_name}")
+    
+    embed_cus.description = "\n".join(desc_lines)
+    embed_cus.add_field(name="**Nội Dung**", value=f"```{detail_text}```", inline=False)
+    embed_cus.set_footer(text="Cảm ơn bạn đã ủng hộ Shop!")
+    embed_cus.timestamp = discord.utils.utcnow()
+
+    # --- 2. GỬI VÀO TICKET (NẾU CÓ) ---
     ticket_jump_url = "https://discord.com" 
     if user_id in active_tickets:
         try:
@@ -727,28 +780,32 @@ async def process_successful_payment(user_id, amount_received, description):
             thread = bot.get_channel(thread_id)
             if thread:
                 ticket_jump_url = thread.jump_url 
-                embed_cus = discord.Embed(title="✅ THANH TOÁN THÀNH CÔNG", color=0x2ecc71)
-                desc_lines = [
-                    "**Cảm ơn bạn! Hệ thống đã ghi nhận giao dịch.**\n",
-                    f"**Mã Đơn Hàng :** `#{order_id}`\n",
-                    f"**Số Tiền :** {amount_received:,} VNĐ\n"
-                ]
-                if booster_name != "Không chọn":
-                    desc_lines.append(f"**Người Cày :** {booster_name}")
-                
-                embed_cus.description = "\n".join(desc_lines)
-                embed_cus.add_field(name="**Nội Dung**", value=f"```{detail_text}```", inline=False)
-                embed_cus.set_footer(text="Admin sẽ sớm liên hệ. Vui lòng KHÔNG đóng ticket này.")
-                embed_cus.timestamp = discord.utils.utcnow()
-                await thread.send(content=f"||<@{user_id}>|| **✧ 🎟️Phiếu Xác Nhận Đơn Hàng🎟️ ✧**", embed=embed_cus)
+                # Thêm hướng dẫn ở footer cho bản trong ticket
+                embed_ticket = embed_cus.copy()
+                embed_ticket.set_footer(text="Admin sẽ sớm liên hệ. Vui lòng KHÔNG đóng ticket này.")
+                await thread.send(content=f"||<@{user_id}>|| **✧ 🎟️Phiếu Xác Nhận Đơn Hàng🎟️ ✧**", embed=embed_ticket)
         except Exception as e:
-            print(f"-> ⚠️ Lỗi gửi khách hàng: {e}")
+            print(f"-> ⚠️ Lỗi gửi khách hàng tại Ticket: {e}")
+
+    # --- 3. [MỚI] GỬI TRỰC TIẾP CHO USER (DM) ---
+    try:
+        user_obj = await bot.fetch_user(user_id) # Tìm user
+        if user_obj:
+            # Gửi tin nhắn riêng
+            await user_obj.send(content=f"🎉 **Hóa đơn đơn hàng #{order_id}**", embed=embed_cus)
+            print(f"-> ✅ Đã gửi DM hóa đơn cho {user_id}")
+    except discord.Forbidden:
+        print(f"-> ⚠️ Không thể gửi DM cho {user_id} (Họ khóa tin nhắn người lạ).")
+    except Exception as e:
+        print(f"-> ❌ Lỗi khi gửi DM: {e}")
 
     await asyncio.sleep(2) 
-
+    
+    # --- 4. GỬI CHO ADMIN ---
     try:
         order_data = {
             "order_id": order_id,
+            "user_id": user_id,  # <--- BẮT BUỘC THÊM DÒNG NÀY
             "amount": amount_received,
             "details": raw_product_text, 
             "booster": booster_name
@@ -756,8 +813,9 @@ async def process_successful_payment(user_id, amount_received, description):
 
         admin_chan = bot.get_channel(CHANNEL_ID_ADMIN)
         if admin_chan:
+            # Lấy thông tin user để tag vào admin
             try:
-                user_obj = await bot.fetch_user(user_id)
+                if 'user_obj' not in locals(): user_obj = await bot.fetch_user(user_id)
                 user_mention = user_obj.mention
             except:
                 user_mention = f"User ID: {user_id}"
@@ -780,6 +838,7 @@ async def process_successful_payment(user_id, amount_received, description):
     except Exception as e:
         print(f"-> ❌ Lỗi gửi ADMIN: {e}")
 
+    # Xóa giỏ hàng
     if user_id in user_carts: del user_carts[user_id]
     if user_id in user_choices: del user_choices[user_id]
 
@@ -1013,6 +1072,47 @@ class AdminPanelView(View):
 # ==========================================
 # --- LOOP & RUN ---
 # ==========================================
+# Biến lưu tháng hiện tại để so sánh
+current_month_check = datetime.now(VN_TZ).month
+
+@tasks.loop(hours=1)
+async def monthly_report_task():
+    global current_month_check
+    now = datetime.now(VN_TZ)
+    
+    # Nếu tháng hiện tại KHÁC tháng đã lưu -> Tức là vừa sang tháng mới
+    if now.month != current_month_check:
+        prev_month = current_month_check
+        prev_year = now.year if now.month > 1 else now.year - 1
+        month_str_query = f"{prev_month:02d}/{prev_year}" # Ví dụ: "12/2024"
+
+        # Tính tổng doanh thu tháng trước từ MongoDB
+        pipeline = [
+            {"$match": {"month_str": month_str_query}},
+            {"$group": {"_id": None, "total": {"$sum": "$amount"}, "count": {"$sum": 1}}}
+        ]
+        result = list(col_revenue.aggregate(pipeline))
+        
+        total_revenue = result[0]['total'] if result else 0
+        total_orders = result[0]['count'] if result else 0
+
+        # Gửi báo cáo vào kênh Thống Kê
+        stats_channel = bot.get_channel(CHANNEL_ID_STATS)
+        if stats_channel:
+            embed = discord.Embed(title=f"📊 BÁO CÁO DOANH THU THÁNG {prev_month}/{prev_year}", color=0xf1c40f)
+            embed.add_field(name="💰 Tổng Doanh Thu", value=f"**{total_revenue:,} VNĐ**", inline=False)
+            embed.add_field(name="🛒 Tổng Đơn Hàng", value=f"{total_orders} đơn", inline=False)
+            embed.set_footer(text="Hệ thống tự động chốt sổ lúc 00:00 (VN Time)")
+            embed.timestamp = discord.utils.utcnow()
+            
+            await stats_channel.send(content="@everyone 📢 **BÁO CÁO THÁNG CŨ ĐÃ VỀ!**", embed=embed)
+        
+        # Cập nhật lại tháng hiện tại để chờ tháng sau
+        current_month_check = now.month
+
+@monthly_report_task.before_loop
+async def before_monthly_task():
+    await bot.wait_until_ready()
 
 @tasks.loop(seconds=60) 
 async def check_gmail_task():
@@ -1030,9 +1130,16 @@ async def on_ready():
     print(f"✅ Bot đã sẵn sàng: {bot.user}")
     load_products(force_update=True) # Load Cache ngay khi bot bật
     
+    # Kích hoạt Check Mail
     if not check_gmail_task.is_running():
         check_gmail_task.start()
         print("📧 Đã bật tính năng đọc Gmail (Chu kỳ: 60s).")
+
+    # --- ĐÂY LÀ ĐOẠN BẠN CẦN THÊM VÀO ---
+    if not monthly_report_task.is_running():
+        monthly_report_task.start()
+        print("📊 Đã bật tính năng tự động báo cáo doanh thu tháng.")
+    # -------------------------------------
 
     try:
         manager_channel = bot.get_channel(CHANNEL_ID_MANAGEMENT)
